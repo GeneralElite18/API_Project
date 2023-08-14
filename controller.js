@@ -9,10 +9,11 @@ async function findAll(){
 }
 
 async function addSpecies(newSpecies){
-    return await query("INSERT INTO species SET ?", [newSpecies]);
+    return await query("INSERT INTO species VALUES (?)", [newSpecies]);
 };
 
 async function updateSpecies(name, updatedSpecies){
+    console.log(updatedSpecies);
     return await query("UPDATE species SET ? WHERE speciesName = ?", [updatedSpecies, name]);
 };
 

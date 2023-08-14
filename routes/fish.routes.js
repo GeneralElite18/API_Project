@@ -25,7 +25,6 @@ fishRouter.get("/:id?", async (req, res, next) => {
 
 fishRouter.post("/", async (req, res, next) => {
     const newSpecies = req.body;
-
     try{
         const result = await species.addSpecies(newSpecies);
 
@@ -40,7 +39,6 @@ fishRouter.post("/", async (req, res, next) => {
 fishRouter.put("/:id", async (req, res, next) => {
     const { id } = req.params;
     const updatedSpecies = req.body;
-
     try{
         const result = await species.updateSpecies(id, updatedSpecies);
         res.status(200);
@@ -53,7 +51,6 @@ fishRouter.put("/:id", async (req, res, next) => {
 
 fishRouter.delete("/:id", async (req, res, next) => {
     const { id } = req.params;
-
     try{
         const result = await species.removeOne(id);
         res.status(200);
